@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.pacman.game.model.*;
 
 public class MonPacman extends ApplicationAdapter {
@@ -16,7 +17,7 @@ public class MonPacman extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-		p = new Pacman();
+		p = new Pacman(new Vector2(1,2));
 		m = new Monde(new Labyrinthe(600, 800));
 		batch = new SpriteBatch();
 		img = new Texture("bloc.png");

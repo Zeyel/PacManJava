@@ -8,15 +8,15 @@ public class Bloc extends Element{
 	
 	// CONSTRUCTEURS
 	public Bloc( Vector2 v, Monde m) {
-		this.setV(v);
-		this.setM(m);
+		super(v);
+		this.setMonde(m);
 	}
 	// GETTERS & SETTERS
 	
 	public float getTaille() {
 		return Bloc.taille;
 	}
-	public Texture getText() {
+	public Texture getTexture() {
 		return TextureFactory.getInstance().getBloc();
 	}
 	

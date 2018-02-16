@@ -10,7 +10,7 @@ public class Monde {
 	}
 	
 	public Monde(Labyrinthe lab) {
-		this.setLab(lab);
+		this.setLabyrinthe(lab);
 	}
 	// GETTERS & SETTERS
 
@@ -38,8 +38,8 @@ public class Monde {
 		return lab.getWidth();
 	}
 	
-	public iterator<Element> iterator(){
+	/*public iterator<Element> iterator(){
 		return lab.iterator();
-	}
+	}*/
 	// METHODES
 }
