@@ -1,10 +1,11 @@
-package com.pacman.game;
+package com.pacman.game.pacman;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.pacman.game.model.*;
 
 public class MonPacman extends ApplicationAdapter {
 	SpriteBatch batch;

@@ -1,4 +1,4 @@
-package com.pacman.game;
+package com.pacman.game.model;
 
 import com.badlogic.gdx.math.Vector2;
 

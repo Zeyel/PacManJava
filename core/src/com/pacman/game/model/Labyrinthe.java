@@ -1,4 +1,4 @@
-package com.pacman.game;
+package com.pacman.game.model;
 import java.util.ArrayList;
 
 public class Labyrinthe {
