@@ -1,19 +1,18 @@
 package com.pacman.game.model;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Labyrinthe {
 	private ArrayList<Bloc> maze;
 	private int height;
 	private int width;
-	private Pacman p;
-
+	private Iterator<Element> gameElement;
 	
 	//CONSTRUCTEURS
 	
-	public Labyrinthe (int h, int w , Pacman p) {
+	public Labyrinthe (int h, int w) {
 		this.setHeight(h);
 		this.setWidth(w);
-		this.setPacman(p);
 	}
 	
 	//GETTERS & SETTERS
@@ -39,12 +38,5 @@ public class Labyrinthe {
 
 	public void setHeight(int height) {
 		this.height = height;
-	}
-	
-	public Pacman getPacman() {
-		return this.p;
-	}
-	public void setPacman(Pacman p) {
-		this.p = p;
 	}
 }
