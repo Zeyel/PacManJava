@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import com.badlogic.gdx.graphics.Texture;
 
 public class TextureFactory {
+	private TextureFactory instance = null;
 	private  Texture bloc;
 	private  ArrayList<Texture> pacman = new ArrayList<Texture>();
 	
@@ -20,9 +21,14 @@ public class TextureFactory {
 	this.pacman.add(new Texture("pacmanDown-2.png"));
 	this.pacman.add(new Texture("pacmanUp.png"));
 	this.pacman.add(new Texture("pacmanUp-2.png"));
+	
+	instance = this;
 	}
 	// GETTERS ET SETTERS
 	public static TextureFactory getInstance() {
+		if(instance != null){
+			return instance;
+		}
 		return new TextureFactory();
 	}
 	
