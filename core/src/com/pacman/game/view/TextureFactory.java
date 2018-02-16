@@ -26,10 +26,10 @@ public class TextureFactory {
 	}
 	// GETTERS ET SETTERS
 	public static TextureFactory getInstance() {
-		if(instance != null){
-			return instance;
+		if(instance == null){
+			instance = new TextureFactory();
 		}
-		return new TextureFactory();
+		return instance;
 	}
 	
 	public Texture getBloc() {
