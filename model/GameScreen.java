@@ -1,5 +1,8 @@
 package com.pacman.game.model;
 
+import com.pacman.game.pacman.*;
+import com.pacman.game.view.*;
+
 public class GameScreen extends SpriteBatch{
 	
 	private Monde world;
@@ -18,7 +21,7 @@ public class GameScreen extends SpriteBatch{
 		//TODO
 	}
 
-	public resize(int h, int l){
+	public void resize(int h, int l){
 		//TODO
 	}
 	
