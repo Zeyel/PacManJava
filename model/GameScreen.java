@@ -1,7 +1,7 @@
-package com.pacman.game.model;
+package com.model;
 
-import com.pacman.game.pacman.*;
-import com.pacman.game.view.*;
+import com.pacman.*;
+import com.view.*;
 
 public class GameScreen extends SpriteBatch{
 	

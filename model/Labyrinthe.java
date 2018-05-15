@@ -1,4 +1,4 @@
-package com.pacman.game.model;
+package com.model;
 import java.util.ArrayList;
 import java.util.Iterator;
 

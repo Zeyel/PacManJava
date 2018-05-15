@@ -1,4 +1,4 @@
-package com.pacman.game.model;
+package com.model;
 
 public class Monde {
 	private Labyrinthe lab;

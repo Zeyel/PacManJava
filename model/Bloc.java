@@ -1,7 +1,7 @@
-package com.pacman.game.model;
+package com.model;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
-import com.pacman.game.view.TextureFactory;
+import com.view.TextureFactory;
 
 public class Bloc extends Element{
 	private static final float taille= 48;
