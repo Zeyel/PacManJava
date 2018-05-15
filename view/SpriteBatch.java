@@ -1,4 +1,4 @@
-package com.pacman.game.view;
+package com.view;
 
 public class SpriteBatch {
 	//TODO
