@@ -2,7 +2,7 @@ package com.model;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
-import com.pacman.game.view.TextureFactory;
+import com.view.TextureFactory;
 
 public class Pacman extends Element{
 	public Pacman(Vector2 vecteur) {

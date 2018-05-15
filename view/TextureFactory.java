@@ -1,4 +1,4 @@
-package com.pacman.game.view;
+package com.view;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.Texture;

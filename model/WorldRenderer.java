@@ -1,4 +1,4 @@
-package com.pacman.game.model;
+package com.model;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
