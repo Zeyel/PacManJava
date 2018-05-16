@@ -5,16 +5,27 @@ import com.badlogic.gdx.math.Vector2;
 
 public abstract class Element {
 	
-	private Vector2 v;
+	private int x;
+	private int y;
 	private Monde m;
 	
 	// GETTERS & SETTERS
-	public Vector2 getPosition() {
-		return v;
+	public int getX() {
+		return x;
 	}
-	public void setPosition(Vector2 v) {
-		this.v = v;
+	
+	public void setX(int x) {
+		this.x = x;
 	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public void setY(int y) {
+		this.y = y;
+	}
+	
 	public Monde getMonde() {
 		return m;
 	}
@@ -25,8 +36,10 @@ public abstract class Element {
 	public abstract Texture getTexture();
 	
 	// CONSTRUCTEURS
-	public Element(Vector2 vecteur){
-		v = vecteur;
+	public Element(Monde m, int x, int y){
+		this.m = m;
+		this.x = x;
+		this.y = y;
 	}
 	
 	

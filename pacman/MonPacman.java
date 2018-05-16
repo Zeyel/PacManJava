@@ -17,8 +17,8 @@ public class MonPacman extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-		p = new Pacman(new Vector2(1,2));
-		m = new Monde(new Labyrinthe(600, 800));
+		p = new Pacman(m,1,2);
+		m = new Monde(new Labyrinthe(m));
 		batch = new SpriteBatch();
 		img = new Texture("bloc.png");
 		img2 = new Texture("images/pacman-3.png");

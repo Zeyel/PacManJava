@@ -5,11 +5,12 @@ import com.view.TextureFactory;
 
 public class Bloc extends Element{
 	private static final float taille= 48;
+	private int type;
 	
 	// CONSTRUCTEURS
-	public Bloc( Vector2 v, Monde m) {
-		super(v);
-		this.setMonde(m);
+	public Bloc( Monde m, int x, int y, int type) {
+		super(m,x,y);
+		this.type = type;
 	}
 	// GETTERS & SETTERS
 	
@@ -20,6 +21,13 @@ public class Bloc extends Element{
 		return TextureFactory.getInstance().getBloc();
 	}
 	
+	public int getType() {
+		return type;
+	}
+	
+	public void setType(int type) {
+		this.type = type;
+	}
 	// METHODES
 	
 }

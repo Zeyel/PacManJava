@@ -5,8 +5,8 @@ import com.badlogic.gdx.math.Vector2;
 import com.view.TextureFactory;
 
 public class Pacman extends Element{
-	public Pacman(Vector2 vecteur) {
-		super(vecteur);
+	public Pacman(Monde m, int x, int y) {
+		super(m,x,y);
 		// TODO Auto-generated constructor stub
 	}
 
