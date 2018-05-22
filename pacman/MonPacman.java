@@ -29,8 +29,7 @@ public class MonPacman extends ApplicationAdapter {
 		Gdx.gl.glClearColor(0, 0, 0, 0);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.draw(img2, 30, 30);
+		batch.draw(m.getLabyrinthe().iterator().next().getTexture(), m.getLabyrinthe().iterator().next().getX(), m.getLabyrinthe().iterator().next().getY());
 		batch.end();
 	}
 	

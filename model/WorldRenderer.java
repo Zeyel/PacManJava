@@ -1,6 +1,7 @@
 package com.model;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.view.TextureFactory;
 
 public class WorldRenderer{
 	private Monde world;
@@ -13,6 +14,15 @@ public class WorldRenderer{
 	}
 	
 	void render(){
-		//TODO
+		this.spriteBatch.begin();
+		for (Element element : this.world) {
+			TextureFactory.getInstance().getTexture(Element.getClass()),
+				element.getX() * ppuX,
+				element.getY() * ppuY
+		//		element.getWidth() * ppuX,
+		//		element.getHeight() * ppuY
+				);
+		}
+		this.spriteBatch.end();
 	}
 }

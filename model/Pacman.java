@@ -16,13 +16,8 @@ public float getTaille() {
 	return taille;
 }
 
-public Texture getText() {
-	return TextureFactory.getInstance().getPacman(0);
-}
-
 @Override
 public Texture getTexture() {
-	// TODO Auto-generated method stub
-	return null;
+	return TextureFactory.getInstance().getPacman(0);
 }
 }
