@@ -3,7 +3,9 @@ package com.model;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import com.model.*;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+
 
 public class Labyrinthe implements Iterable<Element>{
 	
@@ -91,6 +93,23 @@ public class Labyrinthe implements Iterable<Element>{
 		
 	}
 
+	private void draw(SpriteBatch batch) {
+		batch.begin();
+		for (int i=0 ; i< this.getHeight() ; i++) {
+			for (int j=0 ; i< this.getWidth() ; i++) {
+				switch (this.labi[i][j]) {
+				case 0 : // draw mur
+				default : // draw vide
+				}
+			}
+		}
+	}
+	
+	public void drawLaby(SpriteBatch batch){
+		draw(batch);
+
+	}
+	
 	@Override
 	public Iterator<Element> iterator() {
 		return new IterateurLabyrinthe(this);
