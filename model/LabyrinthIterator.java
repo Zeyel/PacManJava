@@ -6,12 +6,12 @@ import java.util.NoSuchElementException;
 public class LabyrinthIterator implements Iterator<Element> {
 
 	private Labyrinth laby;
-	int i;
-	int j;
+	private int i;
+	private int j;
 	
 	public LabyrinthIterator(Labyrinth labi) {
 		this.laby = labi;
-		i = j = 0;
+		i = j = 0;		
 	}
 	
 	

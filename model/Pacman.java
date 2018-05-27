@@ -10,17 +10,18 @@ public class Pacman extends Element{
 	}
 
 	private static final float taille = 16;
+	
+	public float getHeight() {
+		return taille;
+	}
+	
+	public float getWidth() {
+		return taille;
+	}
+	
+	@Override
+	public Texture getTexture() {
+		return TextureFactory.getInstance().getTexture(this.getClass());//for now
+	}
 
-public float getHeight() {
-	return taille;
-}
-
-public float getWidth() {
-	return taille;
-}
-
-@Override
-public Texture getTexture() {
-	return TextureFactory.getInstance().getTexture(this.getClass());//for now
-}
 }

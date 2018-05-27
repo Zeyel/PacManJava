@@ -19,11 +19,11 @@ public class WorldRenderer{
 	
 	public void render(){
 		this.spriteBatch.begin();
-		for (Element element : this.world.getLabyrinth()) {//TODO ppux
+		for (Element element : this.world.getLabyrinth()) {
 			this.spriteBatch.draw(
 				TextureFactory.getInstance().getTexture(element.getClass()),
-				element.getX() * 32,
-				element.getY() * 32,
+				element.getX() * ppuX,
+				element.getY() * ppuY,
 				element.getWidth() * ppuX,
 				element.getHeight() * ppuY
 			);

@@ -3,8 +3,12 @@ package com.model;
 import java.util.Iterator;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
-
+import com.model.elem_creator_cor.ElementCreator;
+import com.model.elem_creator_cor.ElementCreatorCrossing;
+import com.model.elem_creator_cor.ElementCreatorFantomWall;
+import com.model.elem_creator_cor.ElementCreatorPath;
+import com.model.elem_creator_cor.ElementCreatorWall;
+import com.model.elem_creator_cor.*;
 
 public class Labyrinth implements Iterable<Element>{
 	
@@ -12,13 +16,14 @@ public class Labyrinth implements Iterable<Element>{
 	private final int height;
 	private final int width;
 	private Element[][] labyElem;
+	private ElementCreator elementCreatorCOR;
 	
-	private final int wall = 0;
-	private final int empty = 1;
+	private final int block = 0;
+	private final int path = 1;
 	private final int crossing = 2;
 	private final int fantomWall = 3;
 	
-	private int[][] labi = new int[][] {
+	private int[][] laby = new int[][] {
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	    {0, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 0},
 	    {0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0},
@@ -57,8 +62,13 @@ public class Labyrinth implements Iterable<Element>{
 	public Labyrinth (World m) {
 		this.world = m;
 		
-		this.height = labi.length;
-		this.width = labi[0].length;
+		this.height = laby.length;
+		this.width = laby[0].length;
+		
+		ElementCreator wall =  new ElementCreatorWall(null);
+		ElementCreator path = new ElementCreatorPath(wall);
+		ElementCreator crossing = new ElementCreatorCrossing(path);
+		elementCreatorCOR = new ElementCreatorFantomWall(crossing);
 		
 		this.init();
 	}
@@ -84,7 +94,7 @@ public class Labyrinth implements Iterable<Element>{
 		
 		for(int i = 0; i < height ; i++) {
 			for(int j = 0; j < width ; j++) {
-				Element elem = new Block(world, i, j);//remplacer par COR
+				Element elem = elementCreatorCOR.handle(world, i, j, laby[i][j]);
 				labyElem[i][j] = elem;				
 			}			
 		}
@@ -95,7 +105,7 @@ public class Labyrinth implements Iterable<Element>{
 		batch.begin();
 		for (int i=0 ; i< this.getHeight() ; i++) {
 			for (int j=0 ; i< this.getWidth() ; i++) {
-				switch (this.labi[i][j]) {
+				switch (this.laby[i][j]) {
 				case 0 : // draw mur
 				default : // draw vide
 				}

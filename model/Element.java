@@ -1,6 +1,7 @@
 package com.model;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.view.TextureFactory;
 
 public abstract class Element {
 	
@@ -37,8 +38,6 @@ public abstract class Element {
 		this.world = m;
 	}
 	
-	public abstract Texture getTexture();
-	
 	// CONSTRUCTEURS
 	public Element(World m, int x, int y){
 		this.world = m;
@@ -46,5 +45,8 @@ public abstract class Element {
 		this.y = y;
 	}
 	
+	public Texture getTexture() {
+		return TextureFactory.getInstance().getTexture(this.getClass());
+	}
 	
 }
