@@ -4,7 +4,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.view.TextureFactory;
 
 public class Bloc extends Element{
-	private static final float taille= 48;
+	private static final float taille= 32;
 	
 	// CONSTRUCTEURS
 	public Bloc( Monde m, int x, int y) {

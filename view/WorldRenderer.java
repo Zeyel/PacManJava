@@ -14,15 +14,17 @@ public class WorldRenderer{
 	public WorldRenderer(Monde world, SpriteBatch sb){
 		this.world = world;
 		this.spriteBatch = sb;
+		ppuX = 1;
+		ppuY = 1;
 	}
 	
 	public void render(){
 		this.spriteBatch.begin();
-		for (Element element : this.world.getLabyrinthe()) {
+		for (Element element : this.world.getLabyrinthe()) {//TODO ppux
 			this.spriteBatch.draw(
 				TextureFactory.getInstance().getTexture(element.getClass()),
-				element.getX() * ppuX,
-				element.getY() * ppuY,
+				element.getX() * 32,
+				element.getY() * 32,
 				element.getWidth() * ppuX,
 				element.getHeight() * ppuY
 			);
