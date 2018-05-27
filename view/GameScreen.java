@@ -1,9 +1,10 @@
-package com.model;
+package com.view;
 
+import com.model.Monde;
 import com.pacman.*;
 import com.view.*;
 
-public class GameScreen extends SpriteBatch{
+public class GameScreen{
 	
 	private Monde world;
 	private WorldRenderer renderer;

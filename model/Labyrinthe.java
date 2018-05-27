@@ -86,7 +86,7 @@ public class Labyrinthe implements Iterable<Element>{
 		
 		for(int i = 0; i < height ; i++) {
 			for(int j = 0; j < width ; j++) {
-				Element elem = new Bloc(monde, i, j, labi[i][j]);
+				Element elem = new Bloc(monde, i, j);//remplacer par COR
 				labiElem[i][j] = elem;				
 			}			
 		}

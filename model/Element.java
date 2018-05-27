@@ -7,6 +7,7 @@ public abstract class Element {
 	
 	private int x;
 	private int y;
+
 	private Monde m;
 	
 	// GETTERS & SETTERS
@@ -21,6 +22,10 @@ public abstract class Element {
 	public int getY() {
 		return y;
 	}
+	
+	public abstract float getHeight();
+	
+	public abstract float getWidth();
 	
 	public void setY(int y) {
 		this.y = y;
