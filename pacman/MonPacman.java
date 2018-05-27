@@ -8,28 +8,19 @@ import com.model.*;
 import com.view.*;
 
 public class MonPacman extends ApplicationAdapter {
-	SpriteBatch batch;
-	World world;
-	//Pacman p;
-	WorldRenderer renderer;
+	GameScreen screen;
 	
 	@Override
 	public void create () {
-		//p = new Pacman(m,1,2);
-		world = new World(new Labyrinth(world));
-		batch = new SpriteBatch();
-		renderer = new WorldRenderer(world, batch);
+		screen = new GameScreen();
 	}
 
 	@Override
 	public void render () {
-		Gdx.gl.glClearColor(0, 0, 0, 0);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		renderer.render();
+		screen.render(0f);
 	}
 	
 	@Override
 	public void dispose () {
-		batch.dispose();
 	}
 }

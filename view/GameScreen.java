@@ -1,5 +1,9 @@
 package com.view;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.model.Labyrinth;
 import com.model.World;
 import com.pacman.*;
 import com.view.*;
@@ -9,9 +13,12 @@ public class GameScreen{
 	private World world;
 	private WorldRenderer renderer;
 	private MonPacman game;
+	private SpriteBatch batch;
 	
 	public GameScreen(){
-		//TODO
+		world = new World(new Labyrinth(world));
+		batch = new SpriteBatch();
+		renderer = new WorldRenderer(world, batch);
 	}
 	
 	public void show(){
@@ -19,7 +26,9 @@ public class GameScreen{
 	}
 
 	public void render(float f){
-		//TODO
+		Gdx.gl.glClearColor(0, 0, 0, 0);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		renderer.render();
 	}
 
 	public void resize(int h, int l){
@@ -39,6 +48,6 @@ public class GameScreen{
 	}
 
 	public void dispose(){
-		//TODO
+		batch.dispose();
 	}
 }

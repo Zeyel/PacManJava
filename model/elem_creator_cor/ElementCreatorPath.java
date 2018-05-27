@@ -1,5 +1,7 @@
 package com.model.elem_creator_cor;
 
+import java.io.Console;
+
 import com.model.Element;
 import com.model.Path;
 import com.model.World;

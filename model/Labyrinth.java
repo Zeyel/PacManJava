@@ -94,30 +94,13 @@ public class Labyrinth implements Iterable<Element>{
 		
 		for(int i = 0; i < height ; i++) {
 			for(int j = 0; j < width ; j++) {
-				Element elem = elementCreatorCOR.handle(world, i, j, laby[i][j]);
-				labyElem[i][j] = elem;				
+				Element elem = elementCreatorCOR.handle(world, j, height - i, laby[i][j]);
+				labyElem[i][j] = elem;		
 			}			
 		}
 		
 	}
 
-	private void draw(SpriteBatch batch) {
-		batch.begin();
-		for (int i=0 ; i< this.getHeight() ; i++) {
-			for (int j=0 ; i< this.getWidth() ; i++) {
-				switch (this.laby[i][j]) {
-				case 0 : // draw mur
-				default : // draw vide
-				}
-			}
-		}
-	}
-	
-	public void drawLaby(SpriteBatch batch){
-		draw(batch);
-
-	}
-	
 	@Override
 	public Iterator<Element> iterator() {
 		return new LabyrinthIterator(this);

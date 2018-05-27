@@ -7,14 +7,14 @@ import com.model.World;
 public class WorldRenderer{
 	private World world;
 	private SpriteBatch spriteBatch;
-	int ppuX;
-	int ppuY;
+	private float ppuX;
+	private float ppuY;
 	
 	public WorldRenderer(World world, SpriteBatch sb){
 		this.world = world;
 		this.spriteBatch = sb;
-		ppuX = 1;
-		ppuY = 1;
+		ppuX = 0.5f;
+		ppuY = 0.5f;
 	}
 	
 	public void render(){
