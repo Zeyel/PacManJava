@@ -1,15 +1,16 @@
 package com.model;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.view.TextureFactory;
-
 public class Pacman extends Element{
+	
+	public enum Direction{ Up,Down,Left,Right, None }
+	
+	private Direction direction = Direction.Right;
+	
 	public Pacman(World w, int x, int y) {
 		super(w,x,y);
-		// TODO Auto-generated constructor stub
 	}
 
-	private static final float taille = 16;
+	private static final float taille = 1f;
 	
 	public float getHeight() {
 		return taille;
@@ -19,9 +20,18 @@ public class Pacman extends Element{
 		return taille;
 	}
 	
-	@Override
-	public Texture getTexture() {
-		return TextureFactory.getInstance().getTexture(this.getClass());//for now
+	public Direction getDirection() {
+		return direction;
 	}
+	
+	public void setDirection(Direction dir) {
+		direction = dir;
+	}
+	
+	// methods
+	
+	
+	
+	
 
 }

@@ -21,7 +21,7 @@ public class TextureFactory {
 		textures.put(Crossing.class, empty);
 		textures.put(Path.class, empty);
 		textures.put(FantomWall.class, empty);
-		//textures.put(Pacman.class, new Texture("pacman.png"));
+		textures.put(Pacman.class, new Texture("images/pacman.png"));
 		//textures.put(Fantom.class, new Texture("fantom.png"));
 		//textures.put(Pellet.class, new Texture("pellet.png"));
 		//textures.put(SuperPellet.class, new Texture("super_pellet.png"));

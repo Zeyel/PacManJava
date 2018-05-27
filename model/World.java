@@ -5,12 +5,10 @@ public class World {
 	private Pacman pacman;
 	
 	// CONSTRUCTEURS
-	public World(){
-		//TODO
-	}
 	
 	public World(Labyrinth lab) {
 		this.setLabyrinth(lab);
+		pacman = new Pacman(this, 1,1);
 	}
 	// GETTERS & SETTERS
 

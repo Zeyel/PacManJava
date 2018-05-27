@@ -12,8 +12,8 @@ public class GameScreen{
 	private WorldRenderer renderer;
 	private SpriteBatch batch;
 		
-	public GameScreen(){
-		world = new World(new Labyrinth(world));
+	public GameScreen(World world){
+		this.world = world;
 		batch = new SpriteBatch();
 		renderer = new WorldRenderer(world, batch);
 	}
@@ -22,10 +22,10 @@ public class GameScreen{
 		//TODO
 	}
 
-	public void render(float f){
+	public void render(long f){
 		Gdx.gl.glClearColor(0, 0, 0, 0);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		renderer.render();
+		renderer.render(f);
 	}
 
 	public void resize(int h, int l){
