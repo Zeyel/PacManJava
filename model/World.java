@@ -1,24 +1,24 @@
 package com.model;
 
-public class Monde {
-	private Labyrinthe lab;
+public class World {
+	private Labyrinth lab;
 	private Pacman pacman;
 	
 	// CONSTRUCTEURS
-	public Monde(){
+	public World(){
 		//TODO
 	}
 	
-	public Monde(Labyrinthe lab) {
-		this.setLabyrinthe(lab);
+	public World(Labyrinth lab) {
+		this.setLabyrinth(lab);
 	}
 	// GETTERS & SETTERS
 
-	public Labyrinthe getLabyrinthe() {
+	public Labyrinth getLabyrinth() {
 		return lab;
 	}
 
-	public void setLabyrinthe(Labyrinthe lab) {
+	public void setLabyrinth(Labyrinth lab) {
 		this.lab = lab;
 	}
 
@@ -37,9 +37,6 @@ public class Monde {
 	public int getWidth(){
 		return lab.getWidth();
 	}
-	
-	/*public iterator<Element> iterator(){
-		return lab.iterator();
-	}*/
+
 	// METHODES
 }

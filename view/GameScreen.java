@@ -1,12 +1,12 @@
 package com.view;
 
-import com.model.Monde;
+import com.model.World;
 import com.pacman.*;
 import com.view.*;
 
 public class GameScreen{
 	
-	private Monde world;
+	private World world;
 	private WorldRenderer renderer;
 	private MonPacman game;
 	

@@ -1,27 +1,26 @@
 package com.model;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.Vector2;
 import com.view.TextureFactory;
 
-public class Bloc extends Element{
-	private static final float taille= 32;
+public class Block extends Element{
+	private static final float size= 32;
 	
 	// CONSTRUCTEURS
-	public Bloc( Monde m, int x, int y) {
+	public Block( World m, int x, int y) {
 		super(m,x,y);
 	}
 	// GETTERS & SETTERS
 	
 	public float getTaille() {
-		return Bloc.taille;
+		return Block.size;
 	}
 	
 	public float getHeight() {
-		return Bloc.taille;
+		return Block.size;
 	}
 	
 	public float getWidth() {
-		return Bloc.taille;
+		return Block.size;
 	}
 	
 	public Texture getTexture() {

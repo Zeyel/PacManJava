@@ -1,7 +1,6 @@
 package com.view;
-import java.util.ArrayList;
 import java.util.HashMap;
-import com.model.Bloc;
+import com.model.Block;
 
 import com.badlogic.gdx.graphics.Texture;
 
@@ -16,7 +15,7 @@ public class TextureFactory {
 	
 		textures = new HashMap<Class<?>, Texture>();
 		
-		textures.put(Bloc.class, new Texture("images/bloc.png"));
+		textures.put(Block.class, new Texture("images/bloc.png"));
 		//textures.put(Pacman.class, new Texture("pacman.png"));
 		//textures.put(Fantom.class, new Texture("fantom.png"));
 		//textures.put(Pellet.class, new Texture("pellet.png"));

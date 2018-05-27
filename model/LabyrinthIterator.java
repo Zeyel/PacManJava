@@ -3,21 +3,21 @@ package com.model;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class IterateurLabyrinthe implements Iterator<Element> {
+public class LabyrinthIterator implements Iterator<Element> {
 
-	private Labyrinthe labi;
+	private Labyrinth laby;
 	int i;
 	int j;
 	
-	public IterateurLabyrinthe(Labyrinthe labi) {
-		this.labi = labi;
+	public LabyrinthIterator(Labyrinth labi) {
+		this.laby = labi;
 		i = j = 0;
 	}
 	
 	
 	@Override
 	public boolean hasNext() {
-		return i < labi.getHeight() && j < labi.getHeight();
+		return i < laby.getHeight() && j < laby.getHeight();
 	}
 
 	@Override
@@ -28,8 +28,8 @@ public class IterateurLabyrinthe implements Iterator<Element> {
 		Element element;
 		
 		do {
-			element = labi.getElement(i, j);
-			j = (j+1) % labi.getWidth();
+			element = laby.getElement(i, j);
+			j = (j+1) % laby.getWidth();
 			if(j==0)
 				i++;			
 		}while(element == null && this.hasNext());

@@ -1,24 +1,22 @@
 package com.model;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 
 
-public class Labyrinthe implements Iterable<Element>{
+public class Labyrinth implements Iterable<Element>{
 	
-	private Monde monde;
+	private World world;
 	private final int height;
 	private final int width;
-	private Element[][] labiElem;
+	private Element[][] labyElem;
 	
-	
-	private final int mur = 0;
-	private final int vide = 1;
-	private final int intersection = 2;
-	private final int barriereFantom = 3;
+	private final int wall = 0;
+	private final int empty = 1;
+	private final int crossing = 2;
+	private final int fantomWall = 3;
 	
 	private int[][] labi = new int[][] {
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -56,8 +54,8 @@ public class Labyrinthe implements Iterable<Element>{
 	
 	//CONSTRUCTEURS
 	
-	public Labyrinthe (Monde m) {
-		this.monde = m;
+	public Labyrinth (World m) {
+		this.world = m;
 		
 		this.height = labi.length;
 		this.width = labi[0].length;
@@ -75,19 +73,19 @@ public class Labyrinthe implements Iterable<Element>{
 	}
 	
 	public Element getElement(int x, int y) {
-		return labiElem[x][y];
+		return labyElem[x][y];
 	}
 	
 	//METHODS
 	
 	private void init() {
 	
-		labiElem = new Element[height][width];
+		labyElem = new Element[height][width];
 		
 		for(int i = 0; i < height ; i++) {
 			for(int j = 0; j < width ; j++) {
-				Element elem = new Bloc(monde, i, j);//remplacer par COR
-				labiElem[i][j] = elem;				
+				Element elem = new Block(world, i, j);//remplacer par COR
+				labyElem[i][j] = elem;				
 			}			
 		}
 		
@@ -112,7 +110,7 @@ public class Labyrinthe implements Iterable<Element>{
 	
 	@Override
 	public Iterator<Element> iterator() {
-		return new IterateurLabyrinthe(this);
+		return new LabyrinthIterator(this);
 	}
 	
 }

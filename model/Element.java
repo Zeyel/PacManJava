@@ -1,14 +1,13 @@
 package com.model;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.Vector2;
 
 public abstract class Element {
 	
 	private int x;
 	private int y;
 
-	private Monde m;
+	private World world;
 	
 	// GETTERS & SETTERS
 	public int getX() {
@@ -31,18 +30,18 @@ public abstract class Element {
 		this.y = y;
 	}
 	
-	public Monde getMonde() {
-		return m;
+	public World getWorld() {
+		return world;
 	}
-	public void setMonde(Monde m) {
-		this.m = m;
+	public void setWorld(World m) {
+		this.world = m;
 	}
 	
 	public abstract Texture getTexture();
 	
 	// CONSTRUCTEURS
-	public Element(Monde m, int x, int y){
-		this.m = m;
+	public Element(World m, int x, int y){
+		this.world = m;
 		this.x = x;
 		this.y = y;
 	}

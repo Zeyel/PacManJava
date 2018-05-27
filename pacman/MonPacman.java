@@ -9,16 +9,16 @@ import com.view.*;
 
 public class MonPacman extends ApplicationAdapter {
 	SpriteBatch batch;
-	Monde m;
+	World world;
 	//Pacman p;
 	WorldRenderer renderer;
 	
 	@Override
 	public void create () {
 		//p = new Pacman(m,1,2);
-		m = new Monde(new Labyrinthe(m));
+		world = new World(new Labyrinth(world));
 		batch = new SpriteBatch();
-		renderer = new WorldRenderer(m, batch);
+		renderer = new WorldRenderer(world, batch);
 	}
 
 	@Override
