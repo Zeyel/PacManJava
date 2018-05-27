@@ -13,8 +13,8 @@ public class WorldRenderer{
 	public WorldRenderer(World world, SpriteBatch sb){
 		this.world = world;
 		this.spriteBatch = sb;
-		ppuX = 0.5f;
-		ppuY = 0.5f;
+		ppuX = 16f;
+		ppuY = 16f;
 	}
 	
 	public void render(){
@@ -22,8 +22,8 @@ public class WorldRenderer{
 		for (Element element : this.world.getLabyrinth()) {
 			this.spriteBatch.draw(
 				TextureFactory.getInstance().getTexture(element.getClass()),
-				element.getX() * ppuX,
-				element.getY() * ppuY,
+				element.getY() * ppuX,
+				(world.getLabyrinth().getHeight() - element.getX() - 1) * ppuY,
 				element.getWidth() * ppuX,
 				element.getHeight() * ppuY
 			);

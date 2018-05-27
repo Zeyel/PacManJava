@@ -5,16 +5,13 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.model.Labyrinth;
 import com.model.World;
-import com.pacman.*;
-import com.view.*;
 
 public class GameScreen{
 	
 	private World world;
 	private WorldRenderer renderer;
-	private MonPacman game;
 	private SpriteBatch batch;
-	
+		
 	public GameScreen(){
 		world = new World(new Labyrinth(world));
 		batch = new SpriteBatch();

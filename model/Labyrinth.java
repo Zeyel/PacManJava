@@ -2,13 +2,11 @@ package com.model;
 
 import java.util.Iterator;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.model.elem_creator_cor.ElementCreator;
 import com.model.elem_creator_cor.ElementCreatorCrossing;
 import com.model.elem_creator_cor.ElementCreatorFantomWall;
 import com.model.elem_creator_cor.ElementCreatorPath;
 import com.model.elem_creator_cor.ElementCreatorWall;
-import com.model.elem_creator_cor.*;
 
 public class Labyrinth implements Iterable<Element>{
 	
@@ -94,7 +92,7 @@ public class Labyrinth implements Iterable<Element>{
 		
 		for(int i = 0; i < height ; i++) {
 			for(int j = 0; j < width ; j++) {
-				Element elem = elementCreatorCOR.handle(world, j, height - i, laby[i][j]);
+				Element elem = elementCreatorCOR.handle(world, i, j, laby[i][j]);
 				labyElem[i][j] = elem;		
 			}			
 		}

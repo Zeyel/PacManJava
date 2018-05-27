@@ -1,17 +1,13 @@
 package com.model;
 
 public class Block extends Element{
-	private static final int size= 32;
+	public static final float size= 1f;
 	
 	// CONSTRUCTEURS
 	public Block( World m, int x, int y) {
-		super(m,x*size,y*size);
+		super(m,x,y);
 	}
 	// GETTERS & SETTERS
-	
-	public float getTaille() {
-		return Block.size;
-	}
 	
 	public float getHeight() {
 		return Block.size;
