@@ -84,6 +84,10 @@ public class Labyrinth implements Iterable<Element>{
 		return labyElem[x][y];
 	}
 	
+	public int getLabyElem(int x, int y) {
+		return this.laby[x][y];
+	}
+	
 	//METHODS
 	
 	private void init() {

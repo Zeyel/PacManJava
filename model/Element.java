@@ -52,8 +52,7 @@ public abstract class Element {
 	public boolean move(int x, int y) {		// Return true if the Element doesn't encounter a wall, 
 		// has to be modified for Pacman who can't pass FantomWall
 		// (1 , 0) pour droite, (0 , 1) pour haut, (-1 , 0) pour gauche, (0 , -1) pour bas
-		Element wall = new Wall(this.getWorld(), this.getX()+x, this.getY()+y);
-		if (getWorld().getLabyrinth().getElement(this.getX()+x, this.getY()+y) != wall) {		// J'sais pas comment teste si getElement est de la classe Wall
+		if (getWorld().getLabyrinth().getLabyElem(this.getX()+x, this.getY()+y) != 0) {	
 			if (this.getX()+x >= this.getWorld().getWidth())			// Si on part hors du décor à droite
 				this.setX(0);
 			else if (this.getX()+ x < 0)											// Si on part hors du décor à gauche
