@@ -35,6 +35,10 @@ public class World {
 	public int getWidth(){
 		return lab.getWidth();
 	}
+	
+	public void update() {
+		pacman.move();		
+	}
 
 	// METHODES
 }

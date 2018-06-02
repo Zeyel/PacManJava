@@ -2,6 +2,7 @@ package com.pacman;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.utils.TimeUtils;
+import com.controller.InputHandler;
 import com.model.MovingElement;
 import com.model.Maze;
 import com.model.World;
@@ -22,12 +23,12 @@ public class PacmanApp extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		world.getPacman().move(MovingElement.Direction.Right);
 		screen.render(TimeUtils.timeSinceMillis(time));
 		time = TimeUtils.millis();
 	}
 	
 	@Override
 	public void dispose () {
+		
 	}
 }

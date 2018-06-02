@@ -26,7 +26,7 @@ public abstract class MovingElement extends Element {
 	
 	public abstract boolean canMove(Direction direction);
 	
-	public void move(Direction direction) {
+	public void move() {
 		if(canMove(direction)) {
 			int x = this.getX();
 			int y = this.getY();
@@ -47,8 +47,6 @@ public abstract class MovingElement extends Element {
 				default:
 					break;
 			}
-			
-			this.setDirection(direction);
 			this.setX(x);
 			this.setY(y);
 			

@@ -35,6 +35,7 @@ public class PacmanRenderer {
 			break;
 		case Right :
 			frame = 3 * pacmanAnimationFrames;
+			break;
 		case Up :
 			frame = 4 * pacmanAnimationFrames;	
 			break;
