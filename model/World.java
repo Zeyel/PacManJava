@@ -12,7 +12,7 @@ public class World {
 	}
 	// GETTERS & SETTERS
 
-	public Maze getLabyrinth() {
+	public Maze getMaze() {
 		return lab;
 	}
 

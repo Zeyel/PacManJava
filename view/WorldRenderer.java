@@ -13,6 +13,9 @@ public class WorldRenderer{
 	private float ppuX;
 	private float ppuY;
 	
+	private MazeRenderer mazeRenderer;
+	private MovingElementRenderer pacmanRenderer;
+	
 	private int pacmanAnimationState = 0;
 	private long elapsedTimeSinceLastUpdate = 0;
 	private final int pacmanAnimationFrames = 2;
@@ -21,17 +24,20 @@ public class WorldRenderer{
 	private final int pacmanTextureWidth = 16;
 	
 	public WorldRenderer(World world, SpriteBatch sb){
+
 		this.world = world;
 		this.spriteBatch = sb;
 		ppuX = 16f;
 		ppuY = 16f;
+		
+		this.mazeRenderer = new MazeRenderer(sb);
+		
 	}
 	
 	public void render(long elapsedTime){
 		this.spriteBatch.begin();
 		
-		drawLabyrinth();
-		
+		mazeRenderer.drawMaze(world.getMaze(), ppuX, ppuY);
 		
 		updatePacman(elapsedTime);
 		drawPacaman();
@@ -82,21 +88,10 @@ public class WorldRenderer{
 		this.spriteBatch.draw(
 				text,
 				pac.getY() * ppuX,
-				(world.getLabyrinth().getHeight() - pac.getX() - 1) * ppuY,
+				(world.getMaze().getHeight() - pac.getX() - 1) * ppuY,
 				pac.getWidth() * ppuX,
 				pac.getHeight() * ppuY
 		);
 	}
 
-	private void drawLabyrinth() {
-		for (Element element : this.world.getLabyrinth()) {
-			this.spriteBatch.draw(
-				TextureFactory.getInstance().getTexture(element.getClass()),
-				element.getY() * ppuX,
-				(world.getLabyrinth().getHeight() - element.getX() - 1) * ppuY,
-				element.getWidth() * ppuX,
-				element.getHeight() * ppuY
-			);
-		}
-	}
 }
