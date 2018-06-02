@@ -4,6 +4,7 @@ public class World {
 	private Maze lab;
 	private Pacman pacman;
 	
+	private boolean paused = false;
 	private long lastUpdate = 0;
 	private final long updateRate = 200; //en ms
 	
@@ -39,7 +40,18 @@ public class World {
 		return lab.getWidth();
 	}
 	
+	public boolean isPaused() {
+		return paused;
+	}
+	
+	public void pause() {
+		paused = !paused;
+	}
+	
 	public void update(long elapsedTime) {
+		
+		if(paused)
+			return;
 		
 		lastUpdate += elapsedTime;
 		

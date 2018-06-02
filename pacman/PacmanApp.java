@@ -2,8 +2,6 @@ package com.pacman;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.utils.TimeUtils;
-import com.controller.InputHandler;
-import com.model.MovingElement;
 import com.model.Maze;
 import com.model.World;
 import com.view.*;

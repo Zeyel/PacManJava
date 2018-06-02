@@ -1,10 +1,6 @@
 package com.view;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.utils.TimeUtils;
-import com.model.Element;
-import com.model.Pacman;
 import com.model.World;
 
 public class WorldRenderer{
