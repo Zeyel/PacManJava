@@ -1,10 +1,6 @@
 package com.model;
 
-public class Pacman extends Element{
-	
-	public enum Direction{ Up,Down,Left,Right, None }
-	
-	private Direction direction = Direction.Right;
+public class Pacman extends MovingElement{
 	
 	public Pacman(World w, int x, int y) {
 		super(w,x,y);
@@ -19,19 +15,37 @@ public class Pacman extends Element{
 	public float getWidth() {
 		return taille;
 	}
-	
-	public Direction getDirection() {
-		return direction;
+		
+	public boolean canMove(Direction direction) {
+		
+		int x = this.getX();
+		int y = this.getY();
+		
+		switch(direction) {
+		case Up :
+			x--;
+			break;
+		case Down :
+			x++;
+			break;
+		case Right :
+			y++;
+			break;
+		case Left :
+			y--;
+			break;
+		default:
+			break;
+		}
+		
+		World world = this.getWorld();
+		
+		if(x >= world.getWidth() || y >= world.getWidth() || x < 0 || y < 0 ){
+		   return false;
+	   }
+		
+		int type = world.getLabyrinth().getLabyElem(x, y);
+		
+		return type != Maze.block;
 	}
-	
-	public void setDirection(Direction dir) {
-		direction = dir;
-	}
-	
-	// methods
-	
-	
-	
-	
-
 }

@@ -3,13 +3,13 @@ package com.model;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class LabyrinthIterator implements Iterator<Element> {
+public class MazeIterator implements Iterator<Element> {
 
-	private Labyrinth laby;
+	private Maze laby;
 	private int i;
 	private int j;
 	
-	public LabyrinthIterator(Labyrinth labi) {
+	public MazeIterator(Maze labi) {
 		this.laby = labi;
 		i = j = 0;		
 	}

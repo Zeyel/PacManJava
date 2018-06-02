@@ -8,20 +8,20 @@ import com.model.elem_creator_cor.ElementCreatorFantomWall;
 import com.model.elem_creator_cor.ElementCreatorPath;
 import com.model.elem_creator_cor.ElementCreatorWall;
 
-public class Labyrinth implements Iterable<Element>{
+public class Maze implements Iterable<Element>{
 	
 	private World world;
 	private final int height;
 	private final int width;
-	private Element[][] labyElem;
+	private Element[][] mazeElement;
 	private ElementCreator elementCreatorCOR;
 	
-	private final int block = 0;
-	private final int path = 1;
-	private final int crossing = 2;
-	private final int fantomWall = 3;
+	static public final int block = 0;
+	static public final int path = 1;
+	static public final int crossing = 2;
+	static public final int fantomWall = 3;
 	
-	private int[][] laby = new int[][] {
+	private int[][] maze = new int[][] {
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	    {0, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 0},
 	    {0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0},
@@ -57,11 +57,11 @@ public class Labyrinth implements Iterable<Element>{
 	
 	//CONSTRUCTEURS
 	
-	public Labyrinth (World m) {
+	public Maze (World m) {
 		this.world = m;
 		
-		this.height = laby.length;
-		this.width = laby[0].length;
+		this.height = maze.length;
+		this.width = maze[0].length;
 		
 		ElementCreator wall =  new ElementCreatorWall(null);
 		ElementCreator path = new ElementCreatorPath(wall);
@@ -81,23 +81,23 @@ public class Labyrinth implements Iterable<Element>{
 	}
 	
 	public Element getElement(int x, int y) {
-		return labyElem[x][y];
+		return mazeElement[x][y];
 	}
 	
 	public int getLabyElem(int x, int y) {
-		return this.laby[x][y];
+		return this.maze[x][y];
 	}
 	
 	//METHODS
 	
 	private void init() {
 	
-		labyElem = new Element[height][width];
+		mazeElement = new Element[height][width];
 		
 		for(int i = 0; i < height ; i++) {
 			for(int j = 0; j < width ; j++) {
-				Element elem = elementCreatorCOR.handle(world, i, j, laby[i][j]);
-				labyElem[i][j] = elem;		
+				Element elem = elementCreatorCOR.handle(world, i, j, maze[i][j]);
+				mazeElement[i][j] = elem;		
 			}			
 		}
 		
@@ -105,7 +105,7 @@ public class Labyrinth implements Iterable<Element>{
 
 	@Override
 	public Iterator<Element> iterator() {
-		return new LabyrinthIterator(this);
+		return new MazeIterator(this);
 	}
 	
 }

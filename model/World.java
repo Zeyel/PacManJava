@@ -1,22 +1,22 @@
 package com.model;
 
 public class World {
-	private Labyrinth lab;
+	private Maze lab;
 	private Pacman pacman;
 	
 	// CONSTRUCTEURS
 	
-	public World(Labyrinth lab) {
+	public World(Maze lab) {
 		this.setLabyrinth(lab);
 		pacman = new Pacman(this, 1,1);
 	}
 	// GETTERS & SETTERS
 
-	public Labyrinth getLabyrinth() {
+	public Maze getLabyrinth() {
 		return lab;
 	}
 
-	public void setLabyrinth(Labyrinth lab) {
+	public void setLabyrinth(Maze lab) {
 		this.lab = lab;
 	}
 

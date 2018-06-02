@@ -2,11 +2,12 @@ package com.pacman;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.utils.TimeUtils;
-import com.model.Labyrinth;
+import com.model.MovingElement;
+import com.model.Maze;
 import com.model.World;
 import com.view.*;
 
-public class MonPacman extends ApplicationAdapter {
+public class PacmanApp extends ApplicationAdapter {
 	
 	private long time;
 	private GameScreen screen;
@@ -14,13 +15,14 @@ public class MonPacman extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-		world = new World(new Labyrinth(world));
+		world = new World(new Maze(world));
 		screen = new GameScreen(world);
 		time = TimeUtils.millis();
 	}
 
 	@Override
 	public void render () {
+		world.getPacman().move(MovingElement.Direction.Right);
 		screen.render(TimeUtils.timeSinceMillis(time));
 		time = TimeUtils.millis();
 	}
