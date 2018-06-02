@@ -51,6 +51,9 @@ public abstract class MovingElement extends Element {
 			this.setY(y);
 			
 		}
+		else {
+			direction = Direction.None;
+		}
 	}
 	
 }

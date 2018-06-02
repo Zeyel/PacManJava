@@ -28,7 +28,7 @@ public class GameScreen{
 	public void render(long f){
 		
 		inputHandeler.handleInput();
-		world.update();
+		world.update(f);
 		
 		Gdx.gl.glClearColor(0, 0, 0, 0);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);

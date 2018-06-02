@@ -4,6 +4,9 @@ public class World {
 	private Maze lab;
 	private Pacman pacman;
 	
+	private long lastUpdate = 0;
+	private final long updateRate = 200; //en ms
+	
 	// CONSTRUCTEURS
 	
 	public World(Maze lab) {
@@ -36,8 +39,14 @@ public class World {
 		return lab.getWidth();
 	}
 	
-	public void update() {
-		pacman.move();		
+	public void update(long elapsedTime) {
+		
+		lastUpdate += elapsedTime;
+		
+		if(lastUpdate > updateRate) {
+			pacman.move();
+			lastUpdate = 0;
+		}		
 	}
 
 	// METHODES

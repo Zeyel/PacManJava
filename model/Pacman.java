@@ -40,7 +40,7 @@ public class Pacman extends MovingElement{
 		
 		World world = this.getWorld();
 		
-		if(x >= world.getWidth() || y >= world.getWidth() || x < 0 || y < 0 ){
+		if(x >= world.getHeight() || y >= world.getWidth() || x < 0 || y < 0 ){
 		   return false;
 	   }
 		
