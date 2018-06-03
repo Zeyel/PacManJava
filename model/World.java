@@ -83,6 +83,13 @@ public class World {
 			fantom.update();
 			fantom.move();
 			
+			
+			if(pacman.getX() == fantom.getX() && fantom.getY() == pacman.getY()) {
+				System.exit(-1);
+			}
+			
+			
+			
 			lastUpdate = 0;
 		}		
 	}

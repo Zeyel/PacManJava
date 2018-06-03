@@ -1,6 +1,5 @@
 package com.model.behaviour;
 
-import com.model.Fantom;
 import com.model.MovingElement.Direction;
 import com.model.Pacman;
 
