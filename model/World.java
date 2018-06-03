@@ -1,8 +1,11 @@
 package com.model;
 
+import com.model.behaviour.*;
+
 public class World {
 	private Maze lab;
 	private Pacman pacman;
+	private Fantom fantom;
 	
 	private boolean paused = false;
 	private long lastUpdate = 0;
@@ -13,6 +16,9 @@ public class World {
 	public World(Maze lab) {
 		this.setLabyrinth(lab);
 		pacman = new Pacman(this, 1,1);
+		
+		Random behaviour = new Random();
+		fantom = new Fantom(this, 13, 12, behaviour);
 	}
 	// GETTERS & SETTERS
 
@@ -30,6 +36,14 @@ public class World {
 	
 	public void setPacman(Pacman pac){
 		pacman = pac;
+	}
+	
+	public Fantom getFantom() {
+		return fantom;
+	}
+	
+	public void setFantom(Fantom fan) {
+		fantom = fan;
 	}
 	
 	public int getHeight(){

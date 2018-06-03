@@ -11,6 +11,7 @@ public class WorldRenderer{
 	
 	private MazeRenderer mazeRenderer;
 	private PacmanRenderer pacmanRenderer;
+	private FantomRenderer fantomRenderer;
 		
 	public WorldRenderer(World world, SpriteBatch sb){
 
@@ -21,6 +22,7 @@ public class WorldRenderer{
 		
 		this.mazeRenderer = new MazeRenderer(sb);
 		this.pacmanRenderer = new PacmanRenderer(sb);
+		this.fantomRenderer = new FantomRenderer(sb);
 	}
 	
 	public void render(long elapsedTime){
@@ -28,6 +30,7 @@ public class WorldRenderer{
 		
 		mazeRenderer.drawMaze(world.getMaze(), ppuX, ppuY);
 		pacmanRenderer.drawPacman(world.getPacman(), ppuX, ppuY, world.getHeight(), elapsedTime);
+		fantomRenderer.drawFantom(world.getFantom(), ppuX, ppuY, world.getHeight(), elapsedTime);
 		this.spriteBatch.end();
 	}
 

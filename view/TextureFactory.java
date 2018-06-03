@@ -22,7 +22,12 @@ public class TextureFactory {
 		textures.put(Path.class, empty);
 		textures.put(FantomWall.class, empty);
 		textures.put(Pacman.class, new Texture("images/pacman.png"));
-		//textures.put(Fantom.class, new Texture("fantom.png"));
+		textures.put(Fantom.class, new Texture("images/ghost1.png"));
+		//textures.put(Fantom.class, new Texture("images/ghost2.png"));
+		//textures.put(Fantom.class, new Texture("images/ghost3.png"));
+		//textures.put(Fantom.class, new Texture("images/ghost4.png"));
+		//textures.put(Fantom.class, new Texture("images/ghostDead.png"));
+		//textures.put(Fantom.class, new Texture("images/ghostEscaping.png"));
 		//textures.put(Pellet.class, new Texture("pellet.png"));
 		//textures.put(SuperPellet.class, new Texture("super_pellet.png"));
 		

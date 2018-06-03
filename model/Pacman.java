@@ -46,6 +46,6 @@ public class Pacman extends MovingElement{
 		
 		int type = world.getMaze().getLabyElem(x, y);
 		
-		return type != Maze.block;
+		return ((type != Maze.block) || (type != Maze.fantomWall)) ;
 	}
 }
