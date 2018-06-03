@@ -14,5 +14,7 @@ public class Minimize extends Behaviour{
 	public Direction choice() {
 		int diffX = this.getX() - this.getHost().getX();
 		int diffY = this.getY() - this.getHost().getY();
+		
+		return Direction.None;
 	}
 }
