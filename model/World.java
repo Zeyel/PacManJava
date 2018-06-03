@@ -7,6 +7,10 @@ public class World {
 	private Pacman pacman;
 	private Fantom fantom;
 	
+	static public final int nothing = 0;
+	static public final int pacgom = 1;
+	static public final int superPacgom = 1;
+
 	private boolean paused = false;
 	private long lastUpdate = 0;
 	private final long updateRate = 200; //en ms

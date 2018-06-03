@@ -28,7 +28,7 @@ public class WorldRenderer{
 	public void render(long elapsedTime){
 		this.spriteBatch.begin();
 		
-		mazeRenderer.drawMaze(world.getMaze(), ppuX, ppuY);
+		mazeRenderer.drawMaze(world.getMaze(), ppuX, ppuY, elapsedTime);
 		pacmanRenderer.drawPacman(world.getPacman(), ppuX, ppuY, world.getHeight(), elapsedTime);
 		fantomRenderer.drawFantom(world.getFantom(), ppuX, ppuY, world.getHeight(), elapsedTime);
 		this.spriteBatch.end();
