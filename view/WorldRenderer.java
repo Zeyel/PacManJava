@@ -26,15 +26,24 @@ public class WorldRenderer{
 	}
 	
 	public void render(long elapsedTime){
-		this.spriteBatch.begin();
 		
+		if(world.isPaused())
+			elapsedTime = 0;
+		
+		this.spriteBatch.begin();
 		mazeRenderer.drawMaze(world.getMaze(), ppuX, ppuY, elapsedTime);
 		pacmanRenderer.drawPacman(world.getPacman(), ppuX, ppuY, world.getHeight(), elapsedTime);
 		fantomRenderer.drawFantom(world.getFantom(), ppuX, ppuY, world.getHeight(), elapsedTime);
 		this.spriteBatch.end();
+		
 	}
 
+	public float getPpuX() {
+		return ppuX;
+	}
 
-
+	public float getPpuY() {
+		return ppuY;
+	}
 	
 }

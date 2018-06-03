@@ -14,7 +14,7 @@ public class InputHandler {
 
 	private class MyGestureListener  implements GestureListener{
 
-		private final double pauseRatio = 0.8;
+		private final double pauseRatio = 0.0606060606;
 		private final float panSensitivity = 4.0f;
 
 		@Override
@@ -26,11 +26,11 @@ public class InputHandler {
 			
 			if(Math.abs(deltaX) > Math.abs(deltaY)) {
 				if(deltaX > 0) {
-					moveLeft();
+					moveRight();
 					return true;
 				}
 				else {
-					moveRight();
+					moveLeft();
 					return true;
 				}
 			}
@@ -50,8 +50,8 @@ public class InputHandler {
 		public boolean tap(float x, float y, int count, int button) {
 			int w = Gdx.graphics.getWidth();
 			int h = Gdx.graphics.getHeight();
-			
-			if(x > h * pauseRatio && y > w * pauseRatio) {
+			//  
+			if(y < h * pauseRatio && x > w * (1-pauseRatio)) {
 				pauseWorld();
 				return true;
 			}

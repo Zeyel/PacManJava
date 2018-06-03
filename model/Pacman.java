@@ -59,7 +59,7 @@ public class Pacman extends MovingElement{
 			if (pellet.isSuperPellet()) {
 				this.getWorld().superPelletEaten();
 			}
-			
+			this.getWorld().augmentScore();
 		}
 		
 	}

@@ -7,12 +7,15 @@ import com.badlogic.gdx.graphics.Texture;
 public class TextureFactory {
 	
 	private HashMap<Class<?>, Texture> textures;
+	private Texture pauseButton;
+	
 	private static TextureFactory instance = null;
 	
 	// CONSTRUCTEURS
 	
 	TextureFactory() {
 	
+		pauseButton = new Texture("images/pause.png");
 		textures = new HashMap<Class<?>, Texture>();
 		
 		Texture empty = new Texture("images/dark.png");
@@ -39,6 +42,10 @@ public class TextureFactory {
 	// METHODES
 	public Texture getTexture(Class<?> c) {
 		return textures.get(c);
+	}
+	
+	public Texture getPauseButton() {
+		return pauseButton;
 	}
 	
 }

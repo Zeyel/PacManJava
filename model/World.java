@@ -10,7 +10,8 @@ public class World {
 	static public final int nothing = 0;
 	static public final int pacgom = 1;
 	static public final int superPacgom = 1;
-
+	
+	private int score = 0;
 	private boolean paused = false;
 	private long lastUpdate = 0;
 	private final long updateRate = 200; //en ms
@@ -65,6 +66,10 @@ public class World {
 		paused = !paused;
 	}
 	
+	public void augmentScore(){
+		score++;
+	}
+	
 	public void update(long elapsedTime) {
 		
 		if(paused)
@@ -82,6 +87,10 @@ public class World {
 	public void superPelletEaten() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public int getScore() {
+		return score;
 	}
 
 	// METHODES
