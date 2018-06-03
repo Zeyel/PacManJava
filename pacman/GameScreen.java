@@ -1,10 +1,11 @@
-package com.view;
+package com.pacman;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.controller.InputHandler;
 import com.model.World;
+import com.view.WorldRenderer;
 
 public class GameScreen{
 	
