@@ -23,12 +23,7 @@ public class TextureFactory {
 		textures.put(FantomWall.class, empty);
 		textures.put(Pacman.class, new Texture("images/pacman.png"));
 		textures.put(Fantom.class, new Texture("images/ghost1.png"));
-		//textures.put(Fantom.class, new Texture("images/ghost2.png"));
-		//textures.put(Fantom.class, new Texture("images/ghost3.png"));
-		//textures.put(Fantom.class, new Texture("images/ghost4.png"));
-		//textures.put(Fantom.class, new Texture("images/ghostDead.png"));
-		//textures.put(Fantom.class, new Texture("images/ghostEscaping.png"));
-		//textures.put(Pellet.class, new Texture("pellet.png"));
+		textures.put(Pellet.class, new Texture("images/pellet.png"));
 		//textures.put(SuperPellet.class, new Texture("super_pellet.png"));
 		
 		instance = this;
