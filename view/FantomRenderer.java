@@ -56,6 +56,44 @@ public class FantomRenderer {
 					fan.getHeight() * ppuY
 			);
 	}
+	
+	public void drawFantom2(Fantom fan, float ppuX, float ppuY, int mazeHeight, long elapsedTime) {
+		updateFantom(elapsedTime);
+		
+		int frame = 0;
+		
+		switch(fan.getDirection()) {
+		case Down :
+			frame = 1 * fantomAnimationFrames;
+			break;
+		case Left :
+			frame = 2 * fantomAnimationFrames;
+			break;
+		case Right :
+			frame = 3 * fantomAnimationFrames;
+			break;
+		case Up :
+			frame = 4 * fantomAnimationFrames;	
+			break;
+		default : 
+			break;
+		}
+		
+		TextureRegion text = new TextureRegion(
+				TextureFactory.getInstance().getTexture(fan.getClass()),
+				(frame + fantomAnimationState) * fantomTextureWidth,
+				16,
+				fantomTextureWidth,
+				fantomTextureHeight);
+			
+			this.spriteBatch.draw(
+					text,
+					fan.getY() * ppuX,
+					(mazeHeight - fan.getX() - 1) * ppuY,
+					fan.getWidth() * ppuX,
+					fan.getHeight() * ppuY
+			);
+	}
 
 	private void updateFantom(long elapsedTime) {
 		elapsedTimeSinceLastUpdate += elapsedTime;

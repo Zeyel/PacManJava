@@ -53,24 +53,24 @@ public class Minimize extends Behaviour{
 	
 	public Direction third(int diffX, int diffY) {
 		if (Math.abs(diffX) < Math.abs(diffY)) {
-			if (-diffX < 0)
+			if (-(diffX) < 0)
 				return Direction.Left;		
 			else
 				return Direction.Right;
 	} else
-		if (-diffX < 0)
+		if (-(diffY) < 0)
 			return Direction.Up;
 		else
 			return Direction.Down;
 	}
 	public Direction lower(int diffX, int diffY) {
 		if (Math.abs(diffX) < Math.abs(diffY)) {
-			if (-diffY < 0)
+			if (-(diffY) < 0)
 				return Direction.Up;		
 			else
 				return Direction.Down;
 	} else
-		if (-diffX < 0)
+		if (-(diffX) < 0)
 			return Direction.Left;
 		else
 			return Direction.Right;

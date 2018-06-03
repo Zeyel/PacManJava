@@ -6,6 +6,7 @@ public class World {
 	private Maze lab;
 	private Pacman pacman;
 	private Fantom fantom;
+	private Fantom fantom2;
 	
 	static public final int nothing = 0;
 	static public final int pacgom = 1;
@@ -15,6 +16,7 @@ public class World {
 	private boolean paused = false;
 	private long lastUpdate = 0;
 	private final long updateRate = 200; //en ms
+	private long timer = 0;
 	
 	// CONSTRUCTEURS
 	
@@ -22,7 +24,9 @@ public class World {
 		this.setLabyrinth(lab);
 		pacman = new Pacman(this, 1,1);
 		Behaviour random = new Randomize(pacman, 13, 12);
-		fantom = new Fantom(this, 13, 12, random);
+		Behaviour minimize = new Minimize(pacman, 14, 12);
+		fantom = new Fantom(this, 13, 12, minimize);
+		fantom2 = new Fantom(this, 13, 14, random);
 	}
 	// GETTERS & SETTERS
 
@@ -44,6 +48,10 @@ public class World {
 	
 	public Fantom getFantom() {
 		return fantom;
+	}
+	
+	public Fantom getFantom2() {
+		return fantom2;
 	}
 	
 	public void setFantom(Fantom fan) {
@@ -78,11 +86,22 @@ public class World {
 		lastUpdate += elapsedTime;
 		
 		if(lastUpdate > updateRate) {
+			if (this.timer > 0) {
+				pacman.move();
+				pacman.eat();
+				fantom.flee();
+				fantom2.flee();
+				fantom.move();
+				fantom2.move();
+				this.timer = this.timer - this.updateRate;
+			} else {
 			pacman.move();
 			pacman.eat();
 			fantom.update();
+			fantom2.update();
 			fantom.move();
-			
+			fantom2.move();
+			}
 			
 			if(pacman.getX() == fantom.getX() && fantom.getY() == pacman.getY()) {
 				System.exit(-1);
@@ -95,7 +114,7 @@ public class World {
 	}
 
 	public void superPelletEaten() {
-		// TODO Auto-generated method stub
+		this.timer = 10000;
 		
 	}
 

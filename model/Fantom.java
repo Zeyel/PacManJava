@@ -44,7 +44,12 @@ public class Fantom extends MovingElement{
 	}
 
 	public void update() {
+		getBehaviour().setTarget();
 		setDirection(behaviour.choice());
+	}
+	public void flee() {
+		getBehaviour().flee();
+		getBehaviour().choice();
 	}
 	
 	public boolean canMove(Direction direction) {

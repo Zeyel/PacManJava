@@ -30,6 +30,11 @@ private int y;
 	public int getX() {
 		return this.x;
 	}
+	public void setTarget() {
+		this.x = target.getX();
+		this.y = target.getY();
+	}
+	
 	public int getY() {
 		return this.y;
 	}
@@ -43,6 +48,11 @@ private int y;
 	public void revive() {
 		this.x = this.target.getX();
 		this.y = this.target.getY();
+	}
+	
+	public void flee() {
+		this.x = this.target.getX()+this.host.getX();
+		this.y = this.target.getY()+this.host.getY();
 	}
 	
 }
