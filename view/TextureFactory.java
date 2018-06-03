@@ -25,7 +25,7 @@ public class TextureFactory {
 		textures.put(Path.class, empty);
 		textures.put(FantomWall.class, empty);
 		textures.put(Pacman.class, new Texture("images/pacman.png"));
-		textures.put(Fantom.class, new Texture("images/ghost1.png"));
+		textures.put(Fantom.class, new Texture("images/ghost.png"));
 		textures.put(Pellet.class, new Texture("images/pellet.png"));
 		//textures.put(SuperPellet.class, new Texture("super_pellet.png"));
 		
