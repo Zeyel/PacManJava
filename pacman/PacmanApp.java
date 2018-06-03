@@ -4,7 +4,6 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.model.Maze;
 import com.model.World;
-import com.view.*;
 
 public class PacmanApp extends ApplicationAdapter {
 	

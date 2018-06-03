@@ -10,11 +10,11 @@ public class Pellet extends Block {
 	}
 
 	public void consume() {
-		consumed = false;
+		consumed = true;
 	}
 	
 	public void reset() {
-		consumed = true;
+		consumed = false;
 	}
 	
 	public void setSuper() {

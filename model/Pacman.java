@@ -48,5 +48,20 @@ public class Pacman extends MovingElement{
 		
 		return ((type != Maze.block) && (type != Maze.fantomWall)) ;
 	}
+
+	
+	public void eat() {
+		
+		Pellet pellet = this.getWorld().getMaze().getPellet(this.getX(), this.getY());
+		
+		if(! pellet.isConsumed()) {
+			pellet.consume();
+			if (pellet.isSuperPellet()) {
+				this.getWorld().superPelletEaten();
+			}
+			
+		}
+		
+	}
 	
 }

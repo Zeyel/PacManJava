@@ -74,8 +74,14 @@ public class World {
 		
 		if(lastUpdate > updateRate) {
 			pacman.move();
+			pacman.eat();			
 			lastUpdate = 0;
 		}		
+	}
+
+	public void superPelletEaten() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	// METHODES

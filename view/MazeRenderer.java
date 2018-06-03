@@ -23,7 +23,7 @@ public class MazeRenderer {
 			
 			Pellet pellet = maze.getPellet(element.getX(), element.getY());
 			
-			if(pellet == null) {				
+			if(pellet == null || pellet.isConsumed()) {				
 				this.spriteBatch.draw(
 					TextureFactory.getInstance().getTexture(element.getClass()),
 					element.getY() * ppuX,
