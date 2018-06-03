@@ -1,5 +1,7 @@
 package com.model.behaviour;
 
-public class Minimize extends Behaviour{
+import com.model.Pacman;
 
+public class Minimize extends Behaviour{
+	private Pacman target;
 }
