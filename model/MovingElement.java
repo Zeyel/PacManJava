@@ -39,10 +39,10 @@ public abstract class MovingElement extends Element {
 					x++;
 					break;
 				case Right :
-					y++;
+					y--;
 					break;
 				case Left :
-					y--;
+					y++;
 					break;
 				default:
 					break;

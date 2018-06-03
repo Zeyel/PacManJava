@@ -29,10 +29,10 @@ public class Pacman extends MovingElement{
 			x++;
 			break;
 		case Right :
-			y++;
+			y--;
 			break;
 		case Left :
-			y--;
+			y++;
 			break;
 		default:
 			break;
@@ -48,4 +48,5 @@ public class Pacman extends MovingElement{
 		
 		return ((type != Maze.block) && (type != Maze.fantomWall)) ;
 	}
+	
 }

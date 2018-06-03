@@ -52,7 +52,7 @@ public class InputHandler {
 			int h = Gdx.graphics.getHeight();
 			
 			if(x > h * pauseRatio && y > w * pauseRatio) {
-				world.pause();
+				pauseWorld();
 				return true;
 			}
 			
@@ -109,10 +109,10 @@ public class InputHandler {
 	public enum action{
 		goUp, goDown, goLeft, goRight, pauseGame
 	}
-	
-	
+		
 	private World world;
 	private HashMap<action, Integer> inputMapping;
+	private HashMap<action, Boolean> pressed;
 	
 	public InputHandler(World world) {
 		
@@ -123,7 +123,14 @@ public class InputHandler {
 		inputMapping.put(action.goRight, Keys.RIGHT);
 		inputMapping.put(action.goLeft, Keys.LEFT);
 		inputMapping.put(action.pauseGame, Keys.ESCAPE);
-
+		
+		pressed = new HashMap<action, Boolean>();
+		pressed.put(action.goUp, false);
+		pressed.put(action.goDown, false);
+		pressed.put(action.goRight, false);
+		pressed.put(action.goLeft, false);
+		pressed.put(action.pauseGame, false);
+		
 		Gdx.input.setInputProcessor(new GestureDetector(new MyGestureListener()));
 		
 	}
@@ -134,32 +141,41 @@ public class InputHandler {
 	
 	private void handleKeyboard() {
 		
-		if(Gdx.input.isKeyPressed(inputMapping.get(action.goUp))){
-			moveUp();
-			return;
-		}
-		
-		if(Gdx.input.isKeyPressed(inputMapping.get(action.goDown))){
-			moveDown();
-			return;
-		}
-		
-		if(Gdx.input.isKeyPressed(inputMapping.get(action.goRight))){
-			moveLeft();
-			return;
-		}
-		
-		if(Gdx.input.isKeyPressed(inputMapping.get(action.goLeft))){
-			moveRight();
-			return;
-		}
-		
-		if(Gdx.input.isKeyPressed(inputMapping.get(action.pauseGame))){
-			world.pause();
+		for(action act : inputMapping.keySet()) {
+			if(Gdx.input.isKeyPressed(inputMapping.get(act))) {				
+				if(! pressed.get(act)) {			
+					perform(act);
+					pressed.put(act,true);
+				}				
+			}
+			else {
+				pressed.put(act,false);
+			}			
 		}
 	}
 	
 	
+	private void perform(action act) {
+		switch(act) {
+		case goUp:
+			moveUp();
+			break;
+		case goDown:
+			moveDown();
+			break;
+		case goLeft :
+			moveLeft();
+			break;
+		case goRight :
+			moveRight();
+			break;
+		case pauseGame :
+		pauseWorld();
+			break;		
+		}
+		
+	}
+
 	private void moveUp() {
 		world.getPacman().setDirection(MovingElement.Direction.Up);
 	}
@@ -174,6 +190,10 @@ public class InputHandler {
 	
 	private void moveRight() {
 		world.getPacman().setDirection(MovingElement.Direction.Left);
+	}
+	
+	private void pauseWorld() {
+		world.pause();
 	}
 	
 }
