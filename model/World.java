@@ -21,8 +21,8 @@ public class World {
 	public World(Maze lab) {
 		this.setLabyrinth(lab);
 		pacman = new Pacman(this, 1,1);
-		
-		fantom = new Fantom(this, 13, 12, new Randomize(fantom, pacman, 13, 12));
+		Behaviour random = new Randomize(pacman, 13, 12);
+		fantom = new Fantom(this, 13, 12, random);
 	}
 	// GETTERS & SETTERS
 
@@ -79,7 +79,10 @@ public class World {
 		
 		if(lastUpdate > updateRate) {
 			pacman.move();
-			pacman.eat();			
+			pacman.eat();
+			fantom.update();
+			fantom.move();
+			
 			lastUpdate = 0;
 		}		
 	}

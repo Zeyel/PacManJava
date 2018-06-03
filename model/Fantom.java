@@ -14,6 +14,7 @@ public class Fantom extends MovingElement{
 	public Fantom(World w, int x, int y, Behaviour behaviour) {
 		super(w,x,y);
 		setBehaviour(behaviour);
+		behaviour.setHost(this);
 		setState(alive);
 	}
 
@@ -42,6 +43,10 @@ public class Fantom extends MovingElement{
 		this.state = i;
 	}
 
+	public void update() {
+		setDirection(behaviour.choice());
+	}
+	
 	public boolean canMove(Direction direction) {
 		
 		int x = this.getX();
@@ -55,10 +60,10 @@ public class Fantom extends MovingElement{
 			x++;
 			break;
 		case Right :
-			y++;
+			y--;
 			break;
 		case Left :
-			y--;
+			y++;
 			break;
 		default:
 			break;

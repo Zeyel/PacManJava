@@ -12,13 +12,16 @@ private Pacman target;
 private int x;
 private int y;
 
-	public Behaviour(Fantom host, Pacman target, int x, int y) {
-		this.host = host;
+	public Behaviour(Pacman target, int x, int y) {
 		this.target = target;
 		this.x = target.getX();
 		this.y = target.getY();
 		this.xHome = x;
 		this.yHome = y;
+	}
+	
+	public void setHost(Fantom fantom) {
+		this.host = fantom;
 	}
 	
 	public Fantom getHost() {
@@ -36,6 +39,7 @@ private int y;
 		this.x = this.xHome;
 		this.y = this.yHome;
 	}
+	
 	public void revive() {
 		this.x = this.target.getX();
 		this.y = this.target.getY();

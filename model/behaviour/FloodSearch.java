@@ -6,8 +6,8 @@ import com.model.Pacman;
 
 public class FloodSearch extends Behaviour{
 
-	public FloodSearch(Fantom host, Pacman target, int x, int y) {
-		super(host, target, x, y);
+	public FloodSearch(Pacman target, int x, int y) {
+		super(target, x, y);
 		// TODO Auto-generated constructor stub
 	}
 

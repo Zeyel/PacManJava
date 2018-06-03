@@ -8,8 +8,8 @@ import com.model.Pacman;
 
 public class Randomize extends Behaviour{
 
-	public Randomize(Fantom host, Pacman target, int x, int y) {
-		super(host, target, x, y);
+	public Randomize(Pacman target, int x, int y) {
+		super(target, x, y);
 	}
 
 	public Direction choice() {

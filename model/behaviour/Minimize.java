@@ -6,8 +6,8 @@ import com.model.Pacman;
 
 public class Minimize extends Behaviour{
 
-	public Minimize(Fantom host, Pacman target, int x, int y) {
-		super(host, target, x, y);
+	public Minimize(Pacman target, int x, int y) {
+		super(target, x, y);
 	}
 
 	@Override
