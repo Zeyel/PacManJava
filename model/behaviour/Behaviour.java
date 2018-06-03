@@ -1,20 +1,44 @@
 package com.model.behaviour;
 
+import com.model.Fantom;
+import com.model.MovingElement.Direction;
 import com.model.Pacman;
 
 public abstract class Behaviour {
+public int xHome;
+public int yHome;
+private Fantom host;
 private Pacman target;
 private int x;
 private int y;
 
-	public Behaviour(Pacman target, int x, int y) {
+	public Behaviour(Fantom host, Pacman target, int x, int y) {
+		this.host = host;
 		this.target = target;
-		this.x = x;
-		this.y = y;
+		this.x = target.getX();
+		this.y = target.getY();
+		this.xHome = x;
+		this.yHome = y;
 	}
-	public abstract int choice();
-	public int flee() {
-		
+	
+	public Fantom getHost() {
+		return this.host;
+	}
+	public int getX() {
+		return this.x;
+	}
+	public int getY() {
+		return this.y;
+	}
+	
+	public abstract Direction choice();
+	public void dying() {
+		this.x = this.xHome;
+		this.y = this.yHome;
+	}
+	public void revive() {
+		this.x = this.target.getX();
+		this.y = this.target.getY();
 	}
 	
 }

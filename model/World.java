@@ -17,8 +17,7 @@ public class World {
 		this.setLabyrinth(lab);
 		pacman = new Pacman(this, 1,1);
 		
-		Random behaviour = new Random(pacman, 13, 12);
-		fantom = new Fantom(this, 13, 12, behaviour);
+		fantom = new Fantom(this, 13, 12, new Randomize(fantom, pacman, 13, 12));
 	}
 	// GETTERS & SETTERS
 

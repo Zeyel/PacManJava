@@ -14,7 +14,7 @@ public class Fantom extends MovingElement{
 	public Fantom(World w, int x, int y, Behaviour behaviour) {
 		super(w,x,y);
 		setBehaviour(behaviour);
-		setState(0);
+		setState(alive);
 	}
 
 
