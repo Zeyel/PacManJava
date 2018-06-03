@@ -51,8 +51,8 @@ private int y;
 	}
 	
 	public void flee() {
-		this.x = this.target.getX()+this.host.getX();
-		this.y = this.target.getY()+this.host.getY();
+		this.x = this.xHome;
+		this.y = this.yHome;
 	}
 	
 }

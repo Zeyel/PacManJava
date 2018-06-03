@@ -45,7 +45,7 @@ public class Minimize extends Behaviour{
 			else
 				return Direction.Right;
 	} else
-		if (diffX < 0)
+		if (diffY < 0)
 			return Direction.Up;
 		else
 			return Direction.Down;

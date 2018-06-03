@@ -7,6 +7,8 @@ public class World {
 	private Pacman pacman;
 	private Fantom fantom;
 	private Fantom fantom2;
+	private Fantom fantom3;
+	private Fantom fantom4;
 	
 	static public final int nothing = 0;
 	static public final int pacgom = 1;
@@ -23,10 +25,14 @@ public class World {
 	public World(Maze lab) {
 		this.setLabyrinth(lab);
 		pacman = new Pacman(this, 1,1);
-		Behaviour random = new Randomize(pacman, 13, 12);
-		Behaviour minimize = new Minimize(pacman, 14, 12);
+		Behaviour random = new Randomize(pacman, 12, 12);
+		Behaviour minimize = new Minimize(pacman, 13, 12);
+		Behaviour minimize2 = new Minimize(pacman, 14, 12);
+		Behaviour random2 = new Randomize(pacman, 15, 12);
 		fantom = new Fantom(this, 13, 12, minimize);
 		fantom2 = new Fantom(this, 13, 14, random);
+		fantom3 = new Fantom(this, 14, 12, random2);
+		fantom4= new Fantom(this, 15, 12, minimize2);
 	}
 	// GETTERS & SETTERS
 
@@ -52,6 +58,14 @@ public class World {
 	
 	public Fantom getFantom2() {
 		return fantom2;
+	}
+	
+	public Fantom getFantom3() {
+		return fantom3;
+	}
+	
+	public Fantom getFantom4() {
+		return fantom4;
 	}
 	
 	public void setFantom(Fantom fan) {
@@ -91,16 +105,24 @@ public class World {
 				pacman.eat();
 				fantom.flee();
 				fantom2.flee();
+				fantom3.flee();
+				fantom4.flee();
 				fantom.move();
 				fantom2.move();
+				fantom3.move();
+				fantom4.move();
 				this.timer = this.timer - this.updateRate;
 			} else {
 			pacman.move();
 			pacman.eat();
 			fantom.update();
 			fantom2.update();
+			fantom3.update();
+			fantom4.update();
 			fantom.move();
 			fantom2.move();
+			fantom3.move();
+			fantom4.move();
 			}
 			
 			if(pacman.getX() == fantom.getX() && fantom.getY() == pacman.getY()) {
