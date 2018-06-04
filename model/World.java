@@ -31,8 +31,8 @@ public class World {
 		Behaviour random2 = new Randomize(pacman, 15, 12);
 		fantom = new Fantom(this, 13, 12, minimize);
 		fantom2 = new Fantom(this, 13, 14, random);
-		fantom3 = new Fantom(this, 14, 12, random2);
-		fantom4= new Fantom(this, 15, 12, minimize2);
+		fantom3 = new Fantom(this, 14, 12, minimize2);
+		fantom4= new Fantom(this, 15, 12, random2);
 	}
 	// GETTERS & SETTERS
 
