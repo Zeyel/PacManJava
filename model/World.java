@@ -125,8 +125,14 @@ public class World {
 			fantom4.move();
 			}
 			
-			if(pacman.getX() == fantom.getX() && fantom.getY() == pacman.getY()) {
-				System.exit(-1);
+		if(
+			samePos(pacman, fantom)||
+			samePos(pacman, fantom2)||
+			samePos(pacman, fantom3)||
+			samePos(pacman, fantom4)) {
+			
+				//TODO fin de partie
+				System.out.println("You lost");
 			}
 			
 			
@@ -135,6 +141,10 @@ public class World {
 		}		
 	}
 
+	private boolean samePos(Element pacman, Element fantom) {
+		return pacman.getX() == fantom.getX() && fantom.getY() == pacman.getY();
+	}
+	
 	public void superPelletEaten() {
 		this.timer = 10000;
 		
